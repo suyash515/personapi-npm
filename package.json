@@ -1,0 +1,20 @@
+{
+  "name": "personapi",
+  "version": "0.1.0",
+  "description": "NPM module to easily access and use the functions provided by the PersonAPI platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/suyash_sumaroo/personapi-npm.git"
+  },
+  "keywords": [
+    "api",
+    "personapi"
+  ],
+  "author": "Sumaroo Suyash Kumar <suyash@codevigor.com> (http://www.codevigor.com)",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/suyash_sumaroo/personapi-npm#readme"
+}
