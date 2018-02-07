@@ -16,5 +16,8 @@
   ],
   "author": "Sumaroo Suyash Kumar <suyash@codevigor.com> (http://www.codevigor.com)",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/suyash_sumaroo/personapi-npm#readme"
+  "homepage": "https://bitbucket.org/suyash_sumaroo/personapi-npm#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
