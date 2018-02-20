@@ -4,13 +4,16 @@ var request = require("request");
 
 module.exports = {
     personapiUrl: "https://api.personapi.com",
-    token: "",
+    userToken: "",
+    appToken: "",
     actions: {
         registerUser: "/appuser/create"
     },
 
-    init: function(token) {
-        this.token = token;
+    init: function(settings) {
+        this.userToken = settings.token;
+        this.appToken = settings.app_token;
+        this.setServiceURL(settings.test_url);
     },
 
     setServiceURL: function(url) {
@@ -20,7 +23,8 @@ module.exports = {
     },
 
     registerUser: function(params) {
-        params.token = this.token;
+        params.token = this.userToken;
+        params.app_token = this.appToken;
 
         return this._sendRequest(this.actions.registerUser, params);
     },
