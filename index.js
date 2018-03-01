@@ -23,6 +23,10 @@ module.exports = {
     },
 
     registerUser: function(params) {
+        if(!params) {
+            params = {};
+        }
+        
         params.token = this.userToken;
         params.app_token = this.appToken;
 
