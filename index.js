@@ -7,7 +7,8 @@ module.exports = {
     userToken: "",
     appToken: "",
     actions: {
-        registerUser: "/appuser/create"
+        registerUser: "/appuser/create",
+        loginUser: "/appuser/login"
     },
 
     init: function(settings) {
@@ -23,18 +24,22 @@ module.exports = {
     },
 
     registerUser: function(params) {
+        return this._sendRequest(this.actions.registerUser, params);
+    },
+
+    login: function(params) {
+        return this._sendRequest(this.actions.loginUser, params);
+    },
+
+    _sendRequest: function(action, params) {
+        var url = this.personapiUrl;
+        
         if(!params) {
             params = {};
         }
         
         params.token = this.userToken;
         params.app_token = this.appToken;
-
-        return this._sendRequest(this.actions.registerUser, params);
-    },
-
-    _sendRequest: function(action, params) {
-        var url = this.personapiUrl;
 
         return new Promise(function(fulfill, reject) {
             var options = {
