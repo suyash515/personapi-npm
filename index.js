@@ -8,7 +8,9 @@ module.exports = {
     appToken: "",
     actions: {
         registerUser: "/appuser/create",
-        loginUser: "/appuser/login"
+        loginUser: "/appuser/login",
+        checkUserLogin: "/appuser/check-session",
+        logout: "/appuser/logout"
     },
 
     init: function(settings) {
@@ -29,6 +31,14 @@ module.exports = {
 
     login: function(params) {
         return this._sendRequest(this.actions.loginUser, params);
+    },
+
+    checkSession: function(params) {
+        return this._sendRequest(this.actions.checkUserLogin, params);
+    },
+
+    logout: function(params) {
+        return this._sendRequest(this.actions.logout, params);
     },
 
     _sendRequest: function(action, params) {
