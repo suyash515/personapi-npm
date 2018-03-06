@@ -1,6 +1,6 @@
 {
   "name": "personapi",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "NPM module to easily access and use the functions provided by the PersonAPI platform",
   "main": "index.js",
   "scripts": {

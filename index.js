@@ -10,7 +10,8 @@ module.exports = {
         registerUser: "/appuser/create",
         loginUser: "/appuser/login",
         checkUserLogin: "/appuser/check-session",
-        logout: "/appuser/logout"
+        logout: "/appuser/logout",
+        getDetails: "/appuser/get-details"
     },
 
     init: function(settings) {
@@ -39,6 +40,10 @@ module.exports = {
 
     logout: function(params) {
         return this._sendRequest(this.actions.logout, params);
+    },
+
+    getUserDetails: function(params) {
+        return this._sendRequest(this.actions.getDetails, params);
     },
 
     _sendRequest: function(action, params) {
