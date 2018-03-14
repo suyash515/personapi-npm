@@ -11,7 +11,8 @@ module.exports = {
         loginUser: "/appuser/login",
         checkUserLogin: "/appuser/check-session",
         logout: "/appuser/logout",
-        getDetails: "/appuser/get-details"
+        getDetails: "/appuser/get-details",
+        saveDetails: "/appuser/save-details"
     },
 
     init: function(settings) {
@@ -46,13 +47,17 @@ module.exports = {
         return this._sendRequest(this.actions.getDetails, params);
     },
 
+    saveUserDetails: function(params) {
+        return this._sendRequest(this.actions.saveDetails, params);
+    },
+
     _sendRequest: function(action, params) {
         var url = this.personapiUrl;
-        
+
         if(!params) {
             params = {};
         }
-        
+
         params.token = this.userToken;
         params.app_token = this.appToken;
 
