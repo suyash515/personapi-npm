@@ -12,7 +12,8 @@ module.exports = {
         checkUserLogin: "/appuser/check-session",
         logout: "/appuser/logout",
         getDetails: "/appuser/get-details",
-        saveDetails: "/appuser/save-details"
+        saveDetails: "/appuser/save-details",
+        changePassword: "/appuser/change-password"
     },
 
     init: function(settings) {
@@ -49,6 +50,10 @@ module.exports = {
 
     saveUserDetails: function(params) {
         return this._sendRequest(this.actions.saveDetails, params);
+    },
+
+    changePassword: function(params) {
+        return this._sendRequest(this.actions.changePassword, params);
     },
 
     _sendRequest: function(action, params) {
