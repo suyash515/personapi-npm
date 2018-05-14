@@ -14,7 +14,8 @@ module.exports = {
         getDetails: "/appuser/get-details",
         saveDetails: "/appuser/save-details",
         changePassword: "/appuser/change-password",
-        getUserId: "/appuser/get-user-id"
+        getUserId: "/appuser/get-user-id",
+        getUserDetailsFromId: "/appuser/get-user-details-from-id"
     },
 
     init: function(settings) {
@@ -59,6 +60,10 @@ module.exports = {
 
     getUserId: function(params) {
         return this._sendRequest(this.actions.getUserId, params);
+    },
+
+    getUserDetailsFromId: function(params) {
+        return this._sendRequest(this.actions.getUserDetailsFromId, params);
     },
 
     _sendRequest: function(action, params) {
