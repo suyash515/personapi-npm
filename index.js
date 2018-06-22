@@ -15,7 +15,12 @@ module.exports = {
         saveDetails: "/appuser/save-details",
         changePassword: "/appuser/change-password",
         getUserId: "/appuser/get-user-id",
-        getUserDetailsFromId: "/appuser/get-user-details-from-id"
+        getUserDetailsFromId: "/appuser/get-user-details-from-id",
+        verifyActionData: "/appuser/verify-activation-data",
+        getUserList : "/appuser/get-user-list",
+        activateUserAccount: "/appuser/activate-user-account",
+        getInactiveUserDetails: "/appuser/get-inactive-user-details",
+        isAdmin: "/appuser/validate-admin"
     },
 
     init: function(settings) {
@@ -30,8 +35,25 @@ module.exports = {
         }
     },
 
+    isAdmin: function(params)
+    {
+        return this._sendRequest(this.actions.isAdmin, params);
+    },
+
+    getInactiveUserDetails: function(params) {
+        return this._sendRequest(this.actions.getInactiveUserDetails, params);
+    },
+
     registerUser: function(params) {
         return this._sendRequest(this.actions.registerUser, params);
+    },
+
+    verifyActivationData: function(params) {
+        return this._sendRequest(this.actions.verifyActionData, params);
+    },
+
+    activateUserAccount: function(params) {
+        return this._sendRequest(this.actions.activateUserAccount, params);
     },
 
     login: function(params) {
@@ -65,6 +87,10 @@ module.exports = {
     getUserDetailsFromId: function(params) {
         return this._sendRequest(this.actions.getUserDetailsFromId, params);
     },
+
+    getUserList: function(params) {
+      return this._sendRequest(this.actions.getUserList, params);
+  },
 
     _sendRequest: function(action, params) {
         var url = this.personapiUrl;
