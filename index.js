@@ -3,7 +3,7 @@
 var request = require("request");
 
 module.exports = {
-    personapiUrl: "https://api.personapi.com",
+    personapiUrl: "https://personapi.codevigor.com",
     userToken: "",
     appToken: "",
     actions: {
