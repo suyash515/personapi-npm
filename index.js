@@ -3,7 +3,7 @@
 var request = require("request");
 
 module.exports = {
-    personapiUrl: "https://api.personapi.com",
+    personapiUrl: "https://personapi.codevigor.com",
     userToken: "",
     appToken: "",
     actions: {
@@ -20,7 +20,10 @@ module.exports = {
         getUserList : "/appuser/get-user-list",
         activateUserAccount: "/appuser/activate-user-account",
         getInactiveUserDetails: "/appuser/get-inactive-user-details",
-        isAdmin: "/appuser/validate-admin"
+        isAdmin: "/appuser/validate-admin",
+        emailForResetPassword: "/appuser/email-reset-password",
+        verifyResetPasswordData: "/appuser/verify-reset-password-data",
+        resetPassword: "/appuser/reset-password"
     },
 
     init: function(settings) {
@@ -90,7 +93,19 @@ module.exports = {
 
     getUserList: function(params) {
       return this._sendRequest(this.actions.getUserList, params);
-  },
+    },
+
+    emailForResetPassword: function(params) {
+        return this._sendRequest(this.actions.emailForResetPassword, params);
+    },
+
+    verifyResetPasswordData: function(params) {
+        return this._sendRequest(this.actions.verifyResetPasswordData, params);
+    },
+
+    resetPassword: function(params) {
+        return this._sendRequest(this.actions.resetPassword, params);
+    },
 
     _sendRequest: function(action, params) {
         var url = this.personapiUrl;
