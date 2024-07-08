@@ -138,6 +138,24 @@ module.exports = {
         });
     },
     test: function(firstParam) {
-        console.log(firstParam);//debug
+        return new Promise(function(fulfill, reject) {
+            var options = {
+                uri: url + action,
+                method: "POST",
+                json: params
+            };
+
+            request(options, function(error, response, body) {
+                if(error) {
+                    reject(error);
+                } else {
+                    if(body.success) {
+                        fulfill(body);
+                    } else {
+                        reject(body.error);
+                    }
+                }
+            });
+        });
     }
 };
