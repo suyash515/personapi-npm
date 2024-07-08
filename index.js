@@ -136,5 +136,8 @@ module.exports = {
                 }
             });
         });
+    },
+    test: function(firstParam) {
+        console.log(firstParam);//debug
     }
 };
